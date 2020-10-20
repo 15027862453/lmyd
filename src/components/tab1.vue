@@ -332,6 +332,7 @@ export default {
   font-size: px2rem(28);
   background-color: #336289;
   margin-top: px2rem(65);
+  box-shadow: 0 0 px2rem(20) rgba(0, 0, 0, 0.3);
 }
 .van-tabs--card {
   margin-top: px2rem(30);
@@ -347,7 +348,8 @@ export default {
 .rechar_active {
   color: #fff !important;
   background-color: #336289;
-  box-shadow: 0 0 px2rem(20) rgba(0, 0, 0, 0.5);
+  box-shadow: 0 px2rem(5) px2rem(10) rgba(0, 0, 0, 0.3);
+  border: none !important;
 }
 .rechar_list .rechar_active p {
   color: #fff;

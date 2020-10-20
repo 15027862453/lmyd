@@ -6,34 +6,36 @@
     <div class="main">
       <van-tabs v-model="active">
         <van-tab title="未开票">
-          <div class="list">
-            <div
-              class="wrap"
-              :class="{ btnImg: arr.indexOf(v.id) != -1 }"
-              v-for="(v, index) in notOpen"
-              :key="index"
-              @click="selectClick(v.id, index)"
-            >
-              <div class="wrap_btn fl"></div>
-              <div class="wrap_left fl">
-                <h3>￥{{ v.money }}</h3>
-                <p>月结发票</p>
-              </div>
-              <div class="wrap_right fr">
-                <p>{{ v.time }}</p>
-              </div>
-            </div>
-          </div>
-          <p class="bottom">最多展示1年内的记录</p>
-          <div class="btn">
-            <div class="select" @click="selectAll">
+          <div class="box">
+            <div class="list">
               <div
-                class="select_btn"
-                :class="{ select_btn_img: arr.length == notOpen.length }"
-              ></div>
-              <p>全选</p>
+                class="wrap"
+                :class="{ btnImg: arr.indexOf(v.id) != -1 }"
+                v-for="(v, index) in notOpen"
+                :key="index"
+                @click="selectClick(v.id, index)"
+              >
+                <div class="wrap_btn fl"></div>
+                <div class="wrap_left fl">
+                  <h3>￥{{ v.money }}</h3>
+                  <p>月结发票</p>
+                </div>
+                <div class="wrap_right fr">
+                  <p>{{ v.time }}</p>
+                </div>
+              </div>
             </div>
-            <van-button type="default" to="Invoice">开发票</van-button>
+            <p class="bottom">最多展示1年内的记录</p>
+            <div class="btn">
+              <div class="select" @click="selectAll">
+                <div
+                  class="select_btn"
+                  :class="{ select_btn_img: arr.length == notOpen.length }"
+                ></div>
+                <p>全选</p>
+              </div>
+              <van-button type="default" to="Invoice">开发票</van-button>
+            </div>
           </div>
         </van-tab>
         <van-tab title="已开票">
@@ -268,27 +270,31 @@ export default {
 .wrap_right {
   line-height: px2rem(84);
 }
+.box{
+  width: 100%;
+  height: 100%;
+}
 .list {
-  height: 77.5vh;
-  overflow-x: auto;
+  margin-bottom: px2rem(200);
 }
 .bottom {
+  position: fixed;
+  left: 0;bottom: px2rem(98);
   width: 100%;
   height: px2rem(81);
   line-height: px2rem(81);
   font-size: px2rem(24);
   color: #999999;
   text-align: center;
+  background-color: #f5f5f5;
 }
 .btn {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  left: px2rem(-30);
   width: 100vw;
   height: px2rem(98);
   line-height: px2rem(98);

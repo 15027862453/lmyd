@@ -14,6 +14,15 @@ export default {};
 </script>
 
 <style lang="scss">
+//按钮
+.van-button--info{
+  border:none;
+}
+.van-button {
+  box-shadow: 0 0 px2rem(20) rgba(0, 0, 0, 0.3);
+}
+
+
 .van-overlay {
   z-index: 999;
 }
