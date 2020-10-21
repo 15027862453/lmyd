@@ -12,26 +12,26 @@
 import "./assets/css/common.css";
 import API from "./common/api/api"
 export default {
-  mounted(){
+  // mounted(){
    
-     let token = localStorage.getItem('token');
-    //用户未登录进行登录
-     if(!token){
-          console.log(this.$route);
-          if(this.$route.query.code){
-            //code存在请求 请求接口code换取token
-            API.getJson('LOGIN',{code:this.$route.query.code}).then((res)=>{
+  //    let token = localStorage.getItem('token');
+  //   //用户未登录进行登录
+  //    if(!token){
+  //         console.log(this.$route);
+  //         if(this.$route.query.code){
+  //           //code存在请求 请求接口code换取token
+  //           API.getJson('LOGIN',{code:this.$route.query.code}).then((res)=>{
 
-            })
-          }else{
-            //code不存在 跳转到微信侧换取code
-            let pageUrl = window.location.href;
-            let wechatAuth2URL = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx92a886f02d51378d&redirect_uri='+encodeURIComponent(pageUrl)+'&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
-            window.location.href=wechatAuth2URL;
-          }
+  //           })
+  //         }else{
+  //           //code不存在 跳转到微信侧换取code
+  //           let pageUrl = window.location.href;
+  //           let wechatAuth2URL = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx92a886f02d51378d&redirect_uri='+encodeURIComponent(pageUrl)+'&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+  //           window.location.href=wechatAuth2URL;
+  //         }
          
-     }
-  }
+  //    }
+  // }
 };
 </script>
 
