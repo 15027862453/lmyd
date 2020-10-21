@@ -13,3 +13,4 @@ html {-webkit-text-size-adjust: none;}
 .clearfix:after{clear: both;}
 .clearfix{*zoom:1;}
 .gWidth{width: 1200px;margin-left: auto;margin-right: auto;}
+button{border: none;}

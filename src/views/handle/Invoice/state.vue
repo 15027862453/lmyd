@@ -4,7 +4,7 @@
     <topHead><h3 slot="header">开发票</h3></topHead>
     <!-- 内容 -->
     <div class="main">
-      <van-tabs v-model="active">
+      <van-tabs v-model="active" >
         <van-tab title="未开票">
           <div class="box">
             <div class="list">
@@ -213,6 +213,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.topHead{
+  position: fixed !important;
+  left: 0;top: 0;
+  z-index: 9999;
+  background-color: #fff;
+}
 .state {
   position: relative;
   height: 100vh;
@@ -270,16 +276,17 @@ export default {
 .wrap_right {
   line-height: px2rem(84);
 }
-.box{
+.box {
   width: 100%;
   height: 100%;
 }
 .list {
-  margin-bottom: px2rem(200);
+  margin:px2rem(220) 0 px2rem(200);
 }
 .bottom {
   position: fixed;
-  left: 0;bottom: px2rem(98);
+  left: 0;
+  bottom: px2rem(98);
   width: 100%;
   height: px2rem(81);
   line-height: px2rem(81);

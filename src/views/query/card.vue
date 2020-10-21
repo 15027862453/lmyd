@@ -31,8 +31,8 @@
           </div>
           <div class="state">
             <p>号码状态</p>
-            <h3 class="often">正常服务</h3>
-            <!-- <h3 class="owe">欠费</h3> -->
+            <!-- <h3 class="often">正常服务</h3> -->
+            <h3 class="owe">欠费</h3>
           </div>
         </li>
         <li>
@@ -44,8 +44,8 @@
           </div>
           <div class="state">
             <p>号码状态</p>
-            <h3 class="often">正常服务</h3>
-            <!-- <h3 class="owe">欠费</h3> -->
+            <!-- <h3 class="often">正常服务</h3> -->
+            <h3 class="owe">欠费</h3>
           </div>
         </li>
         <li>

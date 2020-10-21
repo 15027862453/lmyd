@@ -75,7 +75,7 @@ export default {
   font-size: px2rem(30);
   font-weight: bold;
   color: #333;
-  line-height: px2rem(88);
+  margin: px2rem(25) 0 px2rem(10);
   white-space: nowrap;
   /*内容超宽后禁止换行显示*/
   overflow: hidden;

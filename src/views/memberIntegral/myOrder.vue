@@ -130,14 +130,13 @@ export default {
 .order .list_right {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   margin-top: px2rem(18);
 }
 .order .list_right img {
   width: px2rem(42);
   height: px2rem(42);
+  margin-top: px2rem(-5);
   margin-right: px2rem(8);
-  vertical-align: middle;
 }
 .order .list_right p {
   font-size: px2rem(30);

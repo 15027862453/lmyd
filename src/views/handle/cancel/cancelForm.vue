@@ -112,7 +112,7 @@ export default {
 .wrap .title h4 {
   font-size: px2rem(30);
   color: #333333;
-  line-height: px2rem(98);
+  margin-top: px2rem(35);
 }
 .wrap textarea {
   width: 100%;

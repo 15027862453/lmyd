@@ -10,18 +10,38 @@
  
 <script>
 import "./assets/css/common.css";
-export default {};
+import API from "./common/api/api"
+export default {
+  mounted(){
+   
+     let token = localStorage.getItem('token');
+    //用户未登录进行登录
+     if(!token){
+          console.log(this.$route);
+          if(this.$route.query.code){
+            //code存在请求 请求接口code换取token
+            API.getJson('LOGIN',{code:this.$route.query.code}).then((res)=>{
+
+            })
+          }else{
+            //code不存在 跳转到微信侧换取code
+            let pageUrl = window.location.href;
+            let wechatAuth2URL = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx92a886f02d51378d&redirect_uri='+encodeURIComponent(pageUrl)+'&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+            window.location.href=wechatAuth2URL;
+          }
+         
+     }
+  }
+};
 </script>
+
 
 <style lang="scss">
 //按钮
-.van-button--info{
-  border:none;
-}
 .van-button {
   box-shadow: 0 0 px2rem(20) rgba(0, 0, 0, 0.3);
+  border:none;
 }
-
 
 .van-overlay {
   z-index: 999;
@@ -35,6 +55,12 @@ export default {};
   height: px2rem(100);
 }
 
+
+.state .van-tabs .van-tabs__wrap{
+  position: fixed;
+  left: 0;top: px2rem(87);
+  width: 100vw;
+}
 // 底部边框的颜色
 .van-tabs__line {
   bottom: px2rem(25);
@@ -203,6 +229,6 @@ export default {};
 .van-dialog__cancel, .van-dialog__confirm{
   height: px2rem(60);
   line-height: px2rem(60);
-  margin-top: px2rem(100);
+  margin-top: px2rem(110);
 }
 </style>

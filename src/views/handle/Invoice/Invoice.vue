@@ -41,9 +41,9 @@
             <span>非本月近6个月的消费</span>
           </div>
           <div class="ipt">
-            <p @click="show = true">{{ startTime }}</p>
+            <p>{{ startTime }}</p>
             <span>-</span>
-            <p @click="show = true">{{ endTime }}</p>
+            <p>{{ endTime }}</p>
           </div>
         </li>
         <li>
@@ -91,13 +91,13 @@
             <img src="../../../assets/images/kpyyzz.png" alt="" />
           </van-uploader>
         </li>
-        <li v-if="radio != 2">
+        <li v-if="radio != 2" style="border:none;">
           <div class="list_title"><p>身份证正面照片</p></div>
           <van-uploader v-model="fileList" :max-count="1">
             <img src="../../../assets/images/sfzzm.png" alt="" />
           </van-uploader>
         </li>
-        <li v-if="radio != 2">
+        <li v-if="radio != 2" style="border:none;">
           <div class="list_title"><p>身份证反面照片</p></div>
           <van-uploader v-model="fileList" :max-count="1">
             <img src="../../../assets/images/sfzfm.png" alt="" />
@@ -184,6 +184,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .main {
   padding: 0 px2rem(30);
 }

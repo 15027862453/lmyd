@@ -2,6 +2,22 @@
   <div class="integral">
     <!-- 导航栏 -->
     <topHead><h3 slot="header">我的积分</h3></topHead>
+    <!-- 我的积分轮播图 -->
+    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" v-if="foot == 0">
+      <van-swipe-item
+        ><img src="../../assets/images/lbt.png" alt=""
+      /></van-swipe-item>
+      <van-swipe-item
+        ><img src="../../assets/images/lbt.png" alt=""
+      /></van-swipe-item>
+      <van-swipe-item
+        ><img src="../../assets/images/lbt.png" alt=""
+      /></van-swipe-item>
+      <van-swipe-item
+        ><img src="../../assets/images/lbt.png" alt=""
+      /></van-swipe-item>
+    </van-swipe>
+    
     <!-- 内容 -->
     <div class="main">
       <!-- 积分兑换 -->
@@ -17,21 +33,6 @@
             <p class="pay" @click="toExchange">确定</p>
           </div>
         </Popup>
-        <!-- 轮播图 -->
-        <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-          <van-swipe-item
-            ><img src="../../assets/images/lbt.png" alt=""
-          /></van-swipe-item>
-          <van-swipe-item
-            ><img src="../../assets/images/lbt.png" alt=""
-          /></van-swipe-item>
-          <van-swipe-item
-            ><img src="../../assets/images/lbt.png" alt=""
-          /></van-swipe-item>
-          <van-swipe-item
-            ><img src="../../assets/images/lbt.png" alt=""
-          /></van-swipe-item>
-        </van-swipe>
         <div class="title">积分换话费</div>
         <ul class="integral_list">
           <li
@@ -68,7 +69,9 @@
           <div class="head_bottom">
             <div class="add" @click="goDetails">
               <p>累计积分</p>
-              <h4 style="color: #ffcc00">{{ total }}分<em :class="{'em':isDisabled == true}">+1</em></h4>
+              <h4 style="color: #ffcc00">
+                {{ total }}分<em :class="{ em: isDisabled == true }">+1</em>
+              </h4>
               <span>到期时间：2021.02.02</span>
             </div>
             <div class="usable">
@@ -138,7 +141,7 @@ export default {
       usable: 69,
       sign: "签到",
       show: false,
-      foot: 1,
+      foot: 0,
       active: 0,
       list: [
         {
@@ -212,18 +215,22 @@ export default {
 }
 // 轮播图
 .my-swipe {
-  width: 100%;
-  height: px2rem(330);
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: px2rem(350);
   border-radius: px2rem(20);
   margin-top: px2rem(20);
   margin-bottom: px2rem(90);
   text-align: center;
 }
 .van-swipe-item img {
-  width: 100%;
+  width: px2rem(690);
   height: px2rem(290);
   color: #fff;
   border-radius: px2rem(20);
+  box-shadow: 0 0 px2rem(20) rgba($color: #000000, $alpha: .5);
+  margin-top: px2rem(20);
 }
 .title {
   font-weight: bold;
@@ -386,12 +393,17 @@ export default {
   bottom: px2rem(-50);
   font-size: px2rem(26);
 }
-.head_bottom .add .em{
+.head_bottom .add .em {
   animation: em1 2s linear;
 }
 @keyframes em1 {
-  from{bottom: px2rem(-20);}
-  to{bottom:px2rem(30);opacity: 0;}
+  from {
+    bottom: px2rem(-20);
+  }
+  to {
+    bottom: px2rem(30);
+    opacity: 0;
+  }
 }
 
 .head_bottom span {
@@ -439,14 +451,13 @@ export default {
 .order .list_right {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   margin-top: px2rem(18);
 }
 .order .list_right img {
   width: px2rem(42);
   height: px2rem(42);
+  margin-top: px2rem(-5);
   margin-right: px2rem(8);
-  vertical-align: middle;
 }
 .order .list_right p {
   font-size: px2rem(30);
